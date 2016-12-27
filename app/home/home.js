@@ -9,20 +9,21 @@ angular.module('Project.home',['ngRoute','firebase'])
 }])
 
 .controller('HomeCtrl' ,['$scope','$firebaseAuth',function($scope,$firebaseAuth){
-   
-    $scope.signIn=function(){
-<<<<<<< HEAD
-        var email=$scope.email;
-=======
-        var username=$scope.email;
->>>>>>> 2496cb67f61abad955a0baded3db2e600550321f
+
+
+
+    $scope.signIn=function(er){
+
+        var email= $scope.email;
         var password=$scope.password;
+        console.log(email+"   "+ password);
         var auth= $firebaseAuth();
-        
-        auth.signInWithEmailAndPassword(email , password).then(function(){
+
+        firebase.auth().signInWithEmailAndPassword(email , password).then(function(){
            alert("User Login Successful");
         }).catch(function(){
-            console.log(error);
+            //console.log(error);
+            alert("Error in username or password! try again..!");
         });
     }
 }])
