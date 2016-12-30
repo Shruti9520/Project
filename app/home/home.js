@@ -12,9 +12,7 @@ angular.module('Project.home',['ngRoute','firebase'])
 
  $scope.username = CommonProp.getUser();
 
-    if($scope.username){
-        $location.path('/Welcome');
-    }
+    
     $scope.signIn=function(er){
 
         var email= $scope.email;
