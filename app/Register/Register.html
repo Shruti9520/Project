@@ -18,7 +18,7 @@
                 <div class="jumbotron " >
                     
                     <label for="email">Email Address</label>
-                    <input type="email" name="email" ng-modal="email" class="form-control" placeholder="Email Address" required=""/>
+                    <input type="email" name="email" ng-model="email" class="form-control" placeholder="Email Address" required=""/>
                     <span style="color:red" ng-show="regform.email.$dirty && regform.email.$invalid">
                          <span ng-show="regform.email.$error.required">Email is required.</span>
                          <span ng-show="regform.email.$error.email">Invalid email address.</span>
@@ -28,7 +28,7 @@
                 <div class="jumbotron " >
                     
                     <label for="password">Password</label>
-                    <input type="password" name="password" ng-modal="user.password" class="form-control" placeholder="Password" required="" ng-minlength='8'/>
+                    <input type="password" name="password" ng-model="password" class="form-control" placeholder="Password" required="" ng-minlength='8'/>
                     <span style="color:red" ng-show="regform.password.$dirty && regform.password.$invalid">
                        <span ng-show="regform.password.$error.required">Password is required.</span>
                        <span ng-show="regform.password.$error.minlength">Password must be atleast 8 characters</span>
@@ -40,7 +40,7 @@
                 </div>
                 <div>
                     <span ng-show="ermsg" style="color:red;">{{errormessage}}</span>
-                    <button type="submit" class="btn btn-lg btn-primary btn-block" ng-disabled="regform.$invalid" ng-click="signUp()">Sign Up</button>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block" ng-disabled="regform.$invalid" ng-click="signUp($er)">Sign Up</button>
                 </div>
                 
         </form>

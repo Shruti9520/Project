@@ -4,7 +4,9 @@
 angular.module('Project', [
   'ngRoute',
   'Project.home',
-   'Project.Register'
+   'Project.Register',
+    'Project.Welcome',
+    'Project.addPost'
     
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

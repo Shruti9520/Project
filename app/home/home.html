@@ -28,10 +28,10 @@
                 <div class="jumbotron " >
 
                     <label for="password">Password</label>
-                    <input type="password" name="password" ng-model="password" class="form-control" placeholder="Password" required="" ng-minlength='6'/>
+                    <input type="password" name="password" ng-model="password" class="form-control" placeholder="Password" required="" ng-minlength='8'/>
                     <span style="color:red" ng-show="loginform.password.$dirty && loginform.password.$invalid">
                        <span ng-show="loginform.password.$error.required">Password is required.</span>
-                       <span ng-show="loginform.password.$error.minlength">Password must be atleast 6 characters</span>
+                        <span ng-show="loginform.password.$error.minlength">Password must be atleast 8 characters</span>
                     </span>
 
                 </div>

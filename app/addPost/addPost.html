@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Add Post</title>
+    </head>
+    <body ng-controller="AddPostCtrl">
+         <nav class="navbar navbar-inverse">
+           <div class="container-fluid">
+            <div class="navbar-header">
+                   <a href="#" class="navbar-brand">WebApp</a>
+              </div> 
+           <ul class="nav navbar-nav">
+               <li ><a href="#/Welcome" >Home</a></li>
+               <li class="active"><a href="#/addPost">Add Post</a></li>
+               <li><a href="#">Logout</a></li>
+           </ul>
+           </div>
+        </nav>
+        
+        <div class="container" ng-show="success">
+            <div class="alert alert-success">
+            <strong>Success!</strong> The post has been added.
+            </div>
+        </div>
+        
+        
+        
+        
+        <div class="container">
+            <form role="form" name="postform" ng-submit="add()" novalidate=" ">
+                <legend>Create Post</legend>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="titleText">Post Title</label>
+                            <input type="text" name="titleTxt" class="form-control" ng-model="titleTxt" placeholder="Title" ng-model="titleTxt" ng-submit="add()" required="">
+                            <span style="color:red" ng-show="postform.titleTxt.$dirty && postform.titleTxt.$invalid">
+                         <span ng-show="postform.titleTxt.$error.required">Title is required.</span>
+                         
+                    </span>
+                        </div>
+                            <div class="form-group">
+                                <label for="postTxt">Post</label>
+                               
+                                <textarea name="postTxt" class="form-control" ng-model="postTxt" placeholder="Post" ng-model="postTxt" required=""  ng-minlength='10'></textarea>
+                                <span style="color:red" ng-show="postform.postTxt.$dirty && postform.postTxt.$invalid">
+                       <span ng-show="postform.postTxt.$error.required">Text is required.</span>
+                        <span ng-show="postform.postTxt.$error.minlength">Text must be atleast 10 characters</span>
+                    </span>
+                            </div>
+                        <div class="form-group">
+                        <button type="submit" class="btn btn-primary" ng-disabled="postform.$invalid">Add Post</button>
+                        </div>
+                        </div>
+                    </div>
+                
+            </form>
+        </div>
+        
+    </body>
+</html>
